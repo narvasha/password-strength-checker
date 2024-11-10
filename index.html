@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Checker</title>
+    <style>
+        /* Background image and general page styling */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 0;
+            margin: 0;
+            background-image: url('https://vitbhopal.ac.in/wp-content/uploads/2022/04/Cyber-Security2.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: rgba(244, 244, 244, 0.186);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 5px 5px 10px rgb(13, 219, 44);
+            text-align: center;
+        }
+
+        .container label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+
+        .container input {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .show {
+            cursor: pointer;
+            font-size: 18px;
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+        }
+
+        .strength-bar {
+            height: 8px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .weak {
+            width: 33%;
+            background-color: rgba(255, 0, 0, 0.304);
+        }
+
+        .moderate {
+            width: 66%;
+            background-color: rgba(255, 166, 0, 0.27);
+        }
+
+        .strong {
+            width: 100%;
+            background-color: rgba(0, 128, 0, 0.29);
+        }
+
+        .strength-label {
+            font-size: 18px;
+            font-weight: none;
+            margin-bottom: 10px;
+            color: rgb(250, 249, 250);
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .id-field-container {
+            margin-bottom: 20px;
+        }
+
+        .id-field-container input {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="YourID">Enter your ID (Username or Email):</label>
+        <div class="id-field-container">
+            <input type="text" id="YourID" placeholder="Your ID" required>
+        </div>
+
+        <label for="YourPassword">Enter your password:</label>
+        <div class="password-container">
+            <input type="password" id="YourPassword" placeholder="Your password" required>
+            <div class="show">👁️</div>
+        </div>
+
+        <div id="strengthLabel" class="strength-label">Password Strength: Weak</div>
+        <div class="strength-bar" id="strengthBar"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
